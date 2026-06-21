@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于 bet365 · 站点介绍</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: linear-gradient(145deg, #fce7d6 0%, #f9dac2 45%, #f6ceab 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1.5rem;
+            line-height: 1.7;
+            color: #2d241b;
+        }
+
+        .card {
+            background: #fefbf7;
+            max-width: 820px;
+            width: 100%;
+            border-radius: 32px;
+            box-shadow: 0 20px 40px rgba(150, 90, 40, 0.18), 0 8px 16px rgba(0, 0, 0, 0.06);
+            padding: 3rem 2.8rem;
+            transition: box-shadow 0.25s;
+        }
+
+        @media (max-width: 600px) {
+            .card {
+                padding: 2rem 1.5rem;
+                border-radius: 24px;
+            }
+            body {
+                padding: 1rem;
+            }
+        }
+
+        .hero {
+            margin-bottom: 2rem;
+        }
+
+        .hero short {
+            display: inline-block;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            background: #f2ded3;
+            color: #6f4e35;
+            padding: 0.2rem 0.9rem;
+            border-radius: 40px;
+            font-weight: 500;
+            margin-bottom: 1.2rem;
+        }
+
+        .hero h1 {
+            font-size: 2.4rem;
+            font-weight: 600;
+            line-height: 1.2;
+            color: #3e2c1f;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(135deg, #bc7f5a, #9e6a48);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 650;
+        }
+
+        .intro-text {
+            font-size: 1.05rem;
+            margin: 1.8rem 0 1.2rem 0;
+        }
+
+        .intro-text a {
+            color: #955f3b;
+            font-weight: 600;
+            text-decoration: none;
+            border-bottom: 2px solid rgba(180, 120, 80, 0.3);
+            transition: border-color 0.2s, color 0.2s;
+        }
+
+        .intro-text a:hover {
+            color: #6f4128;
+            border-bottom-color: #9e6a48;
+        }
+
+        .highlight-box {
+            background: #f9ede5;
+            border-radius: 20px;
+            padding: 1.8rem 2rem;
+            margin: 2rem 0 2.2rem 0;
+        }
+
+        .highlight-box p {
+            margin-bottom: 0.75rem;
+        }
+
+        .highlight-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 1.8rem 0 2rem 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem 2rem;
+        }
+
+        @media (max-width: 550px) {
+            .feature-list {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+        }
+
+        .feature-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.6rem;
+            font-size: 1rem;
+            padding: 0.3rem 0;
+        }
+
+        .feature-list li::before {
+            content: "·";
+            font-weight: 700;
+            font-size: 1.6rem;
+            line-height: 1.2;
+            color: #b37a54;
+            flex-shrink: 0;
+            margin-right: 0.2rem;
+        }
+
+        .closing {
+            margin-top: 1.8rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #ebd9cc;
+            font-size: 0.98rem;
+            color: #4d3b2f;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            gap: 0.4rem 0.2rem;
+        }
+
+        .closing a {
+            color: #955f3b;
+            font-weight: 600;
+            text-decoration: none;
+            border-bottom: 2px solid rgba(180, 120, 80, 0.25);
+            transition: border-color 0.2s;
+        }
+
+        .closing a:hover {
+            border-bottom-color: #9e6a48;
+        }
+
+        .footnote {
+            margin-top: 1rem;
+            font-size: 0.88rem;
+            color: #7a604b;
+            text-align: right;
+        }
+
+        .btn-link {
+            display: inline-block;
+            background: #e2cdbc;
+            padding: 0.4rem 1.2rem;
+            border-radius: 40px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            color: #3f2c1e;
+            text-decoration: none;
+            margin: 0 0.2rem;
+            transition: background 0.2s, transform 0.1s;
+        }
+
+        .btn-link:hover {
+            background: #d5bca7;
+            transform: scale(0.97);
+        }
+
+        .inline-btn-wrap {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.2rem;
+            flex-wrap: wrap;
+        }
+
+        a.plain {
+            border-bottom: none;
+        }
+
+        a.plain:hover {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="hero">
+            <short>✻ 一点背景</short>
+            <h1>关于 <span>bet365</span> 的中文站点</h1>
+        </div>
+
+        <div class="intro-text">
+            <p>如果你正在寻找一个直接、清晰了解 <a href="https://chinese-bet365.com" class="plain">bet365</a> 的页面，这里做了些整理。本站并非官方，而是从使用及信息聚合角度出发，把和 <strong>bet365</strong> 相关的基本情况、界面特点以及常见疑问集中在一起，方便快速浏览。</p>
+        </div>
+
+        <div class="highlight-box">
+            <p>这个站点的内容围绕中文用户的视角展开——从平台的基本结构、投注种类说明，到账户操作指引，都尽量用平实的语言表述。不渲染气氛，也不做夸张承诺。所有信息均基于公开材料整理，同时会注明来源与更新日期。</p>
+            <p>你可以把这里看作一份索引：想弄清楚某个功能入口、规则细节，或者对界面术语有疑问，很可能在这能找到简明解释。</p>
+        </div>
+
+        <h2 style="font-size:1.3rem; font-weight:600; color:#3d2b1e; margin-bottom:0.5rem;">整理的内容包括</h2>
+        <ul class="feature-list">
+            <li>主要运动项目及联赛的投注界面说明</li>
+            <li>账户注册、验证、资金存取的基本流程</li>
+            <li>常见术语、赔率显示与结算规则解读</li>
+            <li>移动端与桌面端的功能差异及操作提示</li>
+            <li>客服联络方式与帮助中心导航</li>
+            <li>地区访问限制与替代入口说明</li>
+        </ul>
+
+        <p style="margin: 0.5rem 0 0.8rem 0; font-size: 0.98rem;">每部分都尽量做到客观拆解，不夹杂主观评价。如果你对某个细节有更深入的疑问，页面内也附带了相关的官方帮助文档链接。</p>
+
+        <div class="closing">
+            <span>总的来说，这个页面就是希望让想了解</span>
+            <a href="https://chinese-bet365.com">bet365</a>
+            <span>的人，能在一个安静的地方看到结构化的信息，不被干扰。如果你需要更具体的操作指引，或者想直接到平台里看一看，随时可以回到首页使用导航。</span>
+        </div>
+
+        <div class="footnote">
+            <span>— 最近更新于 2025 · 内容持续校验 —</span>
+        </div>
+    </div>
+</body>
+</html>
