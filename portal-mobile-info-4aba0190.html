@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>介绍 · MK体育</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: "PingFang SC", "Lantinghei SC", "Noto Sans SC", system-ui, -apple-system, sans-serif;
+      line-height: 1.7;
+      color: #2c3e50;
+      background-color: #f5f3f0;
+    }
+
+    /* 深色头图 */
+    .hero {
+      background: linear-gradient(135deg, #1a2530 0%, #263946 60%, #1f2d38 100%);
+      padding: 5rem 1.5rem 3.5rem;
+      text-align: center;
+      color: #eef0f0;
+      position: relative;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 40px;
+      background: linear-gradient(to bottom, transparent, #f5f3f0);
+    }
+    .hero h1 {
+      font-size: 2.6rem;
+      font-weight: 400;
+      letter-spacing: 2px;
+      margin-bottom: 1rem;
+    }
+    .hero h1 span {
+      font-weight: 600;
+      color: #f0b27a;
+    }
+    .hero .subtitle {
+      font-size: 1.05rem;
+      max-width: 620px;
+      margin: 0 auto;
+      opacity: 0.8;
+      font-weight: 300;
+    }
+    .hero .breadcrumb {
+      font-size: 0.85rem;
+      margin-top: 1.2rem;
+      opacity: 0.5;
+    }
+
+    /* 正文区域 浅色 */
+    .container {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 1.5rem 4rem;
+    }
+
+    /* 文章卡片式段落 */
+    .post-body {
+      background: #ffffff;
+      border-radius: 24px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+      padding: 2.8rem 2.8rem 2.5rem;
+      margin-top: -1.2rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .post-body p {
+      margin-bottom: 1.6rem;
+      font-size: 1rem;
+    }
+    .post-body .lead {
+      font-size: 1.12rem;
+      color: #3d4c5a;
+      border-left: 4px solid #d4925a;
+      padding-left: 1.2rem;
+      background: #faf8f5;
+      border-radius: 0 8px 8px 0;
+      line-height: 1.8;
+    }
+
+    .section-title {
+      font-size: 1.3rem;
+      font-weight: 500;
+      margin: 2.2rem 0 0.8rem;
+      color: #1f2d38;
+      letter-spacing: 0.5px;
+    }
+
+    a {
+      color: #b7784c;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid transparent;
+      transition: border 0.2s, color 0.2s;
+    }
+    a:hover {
+      color: #8f5e39;
+      border-bottom-color: #b7784c;
+    }
+
+    blockquote {
+      background: #f0ede9;
+      border-left: 4px solid #cf9d71;
+      margin: 2rem 0 1.8rem;
+      padding: 1.2rem 1.8rem;
+      border-radius: 0 12px 12px 0;
+      color: #37434e;
+      font-style: normal;
+    }
+    blockquote p {
+      margin-bottom: 0.2rem;
+    }
+    blockquote .quote-source {
+      display: block;
+      margin-top: 0.4rem;
+      font-size: 0.9rem;
+      opacity: 0.7;
+    }
+
+    .faq-mini {
+      margin: 2.4rem 0 1.5rem;
+      background: #f8f6f2;
+      border-radius: 16px;
+      padding: 1.6rem 1.8rem;
+    }
+    .faq-mini details {
+      margin-bottom: 0.8rem;
+    }
+    .faq-mini summary {
+      font-weight: 500;
+      cursor: pointer;
+      color: #1f2d38;
+      padding: 0.3rem 0;
+    }
+    .faq-mini summary::-webkit-details-marker {
+      color: #b7784c;
+    }
+    .faq-mini details p {
+      margin: 0.6rem 0 0 0.8rem;
+      font-size: 0.95rem;
+      color: #4b5a67;
+    }
+
+    .visit-sentence {
+      background: #ede8e1;
+      border-radius: 40px;
+      padding: 1.2rem 2rem;
+      margin: 2.6rem 0 1.2rem;
+      text-align: center;
+      font-size: 1.05rem;
+    }
+
+    /* 页脚 */
+    .footer-note {
+      text-align: center;
+      margin-top: 2.5rem;
+      font-size: 0.85rem;
+      color: #8b9aa8;
+      border-top: 1px solid #e2dbd2;
+      padding-top: 2rem;
+    }
+    .footer-note i {
+      font-style: normal;
+      display: inline-block;
+      margin: 0 0.5rem;
+    }
+
+    @media (max-width: 600px) {
+      .hero { padding: 3.5rem 1rem 2.8rem; }
+      .hero h1 { font-size: 2rem; }
+      .post-body { padding: 1.8rem 1.2rem 1.5rem; }
+      .visit-sentence { padding: 1rem 1.2rem; font-size: 0.98rem; }
+      blockquote { margin: 1.5rem 0; padding: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 深色头图 -->
+  <header class="hero">
+    <h1>关于 <span>MK体育</span></h1>
+    <p class="subtitle">从站点介绍与可信说明出发，记录一个服务于移动端的体育信息平台</p>
+    <div class="breadcrumb">—— 阅读时间约 4 分钟 · 简洁版 ——</div>
+  </header>
+
+  <main class="container">
+    <article class="post-body">
+
+      <!-- 导语 -->
+      <p class="lead">
+        MK体育 是一个以移动端体验为核心的体育信息站点，它并非传统意义上的门户或社区，而是更倾向于为习惯在手机上浏览体育内容的用户提供一个轻量、聚合的参考界面。本文从站点定位、内容构成与可信说明等角度展开，希望为首次接触的朋友提供一份平实的介绍。
+      </p>
+
+      <!-- 第一段正文：站点介绍 -->
+      <h2 class="section-title">站点背景与定位</h2>
+      <p>
+        打开 <a href="https://portal-mobile-mksports.com">MK体育</a>，首先感受到的是它针对移动设备所做的布局优化——没有过于拥挤的侧栏，也没有频繁弹出的浮层。无论是赛果查询、赛事前瞻还是数据浏览，页面结构都尽量保持清晰。根据公开信息，这个站点主要面向中文用户，内容覆盖足球、篮球、网球等主流运动的资讯与基本数据，更新节奏偏向日常而非实时滚动。
+      </p>
+      <p>
+        在信息可信度方面，<a href="https://portal-mobile-mksports.com">MK体育</a> 所采用的素材以公开赛事数据与编译类内容为主，不自行制造独家消息或炒作未经证实的传闻。这一点对于希望快速了解体育动态、又不想被夸张标题干扰的读者来说，是值得肯定的基础信任要素。
+      </p>
+
+      <!-- 第二段：特点与使用场景 -->
+      <h2 class="section-title">特点与适用场景</h2>
+      <p>
+        从使用体验来看，<a href="https://portal-mobile-mksports.com">MK体育</a> 有三个比较明显的特征：第一，页面加载速度在移动网络环境下表现不错，这得益于轻量化的前端结构；第二，内容的分类逻辑比较直接，用户能较快定位到想看的联赛或球队页面；第三，大部分文章配有简明的时间戳，方便判断信息时效。
+      </p>
+      <p>
+        如果你经常在通勤或午休时翻一翻体育动态，或者希望找一个干扰较少、没有频繁弹窗的移动端体育页面，<a href="https://portal-mobile-mksports.com">MK体育</a> 或许能成为你的备选之一。当然，任何站点都无法满足所有人的全部需求，建议先花几分钟浏览它的主要板块，再决定是否将其加入常用书签。
+      </p>
+
+      <!-- 引用提示块 -->
+      <blockquote>
+        <p>“熟悉一个信息平台的最好方式，不是听别人评价，而是亲自翻阅几个版块，感受它的节奏与边界。”</p>
+        <span class="quote-source">—— 摘自《信息阅读札记》</span>
+      </blockquote>
+
+      <!-- 第三段：可信说明与边界 -->
+      <h2 class="section-title">可信说明与免责边界</h2>
+      <p>
+        有必要诚实说明：<a href="https://portal-mobile-mksports.com">MK体育</a> 并非官方赛事数据源或任何体育联盟的授权合作方，它的内容建立在公开资料与编译整理之上。因此，当涉及深度战术分析或独家内幕消息时，这个站点并不是首选渠道。但对于日常的赛程回顾、积分榜查阅以及基本的体育新闻浏览，它的参考价值是足够的。
+      </p>
+      <p>
+        另外，网站未内置用户评论区或论坛模块，所以不存在社区争吵或信息污染的问题——这一点可能同时被看作优点（安静）和缺点（缺乏互动）。如果你更倾向于纯阅读环境，或许会觉得它干净利落。
+      </p>
+
+      <!-- FAQ mini 摘要 -->
+      <div class="faq-mini">
+        <details>
+          <summary>MK体育 需要注册或登录吗？</summary>
+          <p>不需要。目前所有公开内容均可直接浏览，没有强制注册环节。部分功能（如收藏或个性化设置）暂未提供。</p>
+        </details>
+        <details>
+          <summary>移动端和 PC 端体验一致吗？</summary>
+          <p>该站点优先为移动端设计，在手机浏览器上表现最佳。PC 浏览器也能正常访问，但版面会保持单栏布局，比较简洁。</p>
+        </details>
+        <details>
+          <summary>内容更新频率如何？</summary>
+          <p>大致保持每日更新，重大赛事期间会增加快讯类内容。没有固定的“每日必发”数量，以当日有效信息为准。</p>
+        </details>
+      </div>
+
+      <!-- 访问句 / 引用句 (自然嵌入 a 标签) -->
+      <div class="visit-sentence">
+        📬 若想亲自感受移动端体育信息页面的风格，不妨直接前往 <a href="https://portal-mobile-mksports.com">MK体育</a> 浏览几个版块。
+      </div>
+
+      <p style="margin-top:1.2rem; font-size:0.95rem; color:#5f6f7d;">
+        以上内容仅作信息整理与站点介绍，不构成任何推荐或背书。请各位读者根据自身判断选择是否使用。
+      </p>
+
+    </article>
+
+    <div class="footer-note">
+      <span>介绍页 · 简洁博客式</span>
+      <i>·</i>
+      <span>内容仅供示意</span>
+      <i>·</i>
+      <span>版本 2025.04</span>
+    </div>
+  </main>
+
+</body>
+</html>
