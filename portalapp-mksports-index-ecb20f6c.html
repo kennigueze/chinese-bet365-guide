@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MK体育：在运动里，发现故事</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f3f4f6;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            color: #2c3e50;
+            line-height: 1.7;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 880px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 1.8rem;
+        }
+
+        /* Hero 卡片 */
+        .hero-card {
+            background: linear-gradient(145deg, #ffffff, #f9fafb);
+            border: 1px solid #e4e7ec;
+            border-radius: 28px;
+            padding: 3rem 2.5rem;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03), 0 2px 6px rgba(0,0,0,0.02);
+            text-align: center;
+        }
+
+        .hero-short {
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #8590a0;
+            margin-bottom: 1.2rem;
+            font-weight: 400;
+        }
+
+        .hero-card h1 {
+            font-size: 2.6rem;
+            font-weight: 350;
+            color: #1a2634;
+            letter-spacing: -0.5px;
+            margin-bottom: 1.4rem;
+        }
+
+        .hero-card h1 span {
+            font-weight: 550;
+            color: #1f2937;
+        }
+
+        .hero-card .tagline {
+            font-size: 1.15rem;
+            color: #4b5a6a;
+            max-width: 600px;
+            margin: 0 auto 0.8rem;
+            font-weight: 350;
+        }
+
+        .hero-card .mild-link {
+            display: inline-block;
+            margin-top: 1.5rem;
+            background: #1f2937;
+            color: #ffffff;
+            padding: 0.65rem 2rem;
+            border-radius: 40px;
+            font-size: 1rem;
+            font-weight: 500;
+            text-decoration: none;
+            border: none;
+            box-shadow: 0 4px 10px rgba(31,41,55,0.08);
+            transition: background 0.2s, box-shadow 0.2s;
+        }
+
+        .hero-card .mild-link:hover {
+            background: #111827;
+            box-shadow: 0 6px 14px rgba(31,41,55,0.15);
+        }
+
+        /* 承接段落卡片 */
+        .card {
+            background: #ffffff;
+            border: 1px solid #e6e9ef;
+            border-radius: 24px;
+            padding: 2rem 2.2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+            transition: box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+        }
+
+        .card h2 {
+            font-size: 1.6rem;
+            font-weight: 400;
+            color: #213245;
+            margin-bottom: 1rem;
+            border-left: 4px solid #9aa7b9;
+            padding-left: 1rem;
+        }
+
+        .card p {
+            font-size: 1rem;
+            color: #3d4d5d;
+            margin-bottom: 1.2rem;
+        }
+
+        .card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .intro-text a {
+            color: #1f2937;
+            text-decoration: none;
+            border-bottom: 1px solid #cbd5e1;
+            font-weight: 500;
+            transition: border-color 0.2s;
+        }
+
+        .intro-text a:hover {
+            border-bottom-color: #1f2937;
+        }
+
+        /* 特点列表：卡片内嵌 */
+        .feature-list {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .feature-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.9rem;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #edf0f5;
+        }
+
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+
+        .feature-marker {
+            font-size: 1.2rem;
+            line-height: 1.4;
+            color: #6a7b8e;
+            min-width: 1.8rem;
+        }
+
+        .feature-list strong {
+            font-weight: 550;
+            color: #1f2a36;
+        }
+
+        /*  FAQ 摘要 – 温和风格 */
+        .faq-item {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #edf0f5;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-q {
+            font-weight: 500;
+            color: #2d3e51;
+            margin-bottom: 0.3rem;
+            font-size: 1rem;
+        }
+
+        .faq-a {
+            color: #566c82;
+            font-size: 0.95rem;
+            padding-left: 0.2rem;
+        }
+
+        /* 场景描述 – 点缀段落 */
+        .scene-dots {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem 1.2rem;
+            margin: 0.6rem 0 0.2rem;
+        }
+
+        .scene-dots span {
+            background: #f0f2f6;
+            padding: 0.2rem 1rem;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            color: #3a4c5e;
+            border: 1px solid #e2e6ed;
+        }
+
+        /* 尾注 */
+        .footer-note {
+            text-align: center;
+            color: #8b9aad;
+            font-size: 0.85rem;
+            padding: 1.2rem 0 0.5rem;
+            border-top: 1px solid #dce1e8;
+            margin-top: 0.6rem;
+        }
+
+        .footer-note a {
+            color: #3a4c5e;
+            text-decoration: none;
+            border-bottom: 1px dotted #bcc6d2;
+        }
+
+        .footer-note a:hover {
+            border-bottom-style: solid;
+        }
+
+        /* 响应式细节 */
+        @media (max-width: 640px) {
+            body {
+                padding: 1.2rem 0.8rem;
+            }
+
+            .hero-card {
+                padding: 2rem 1.5rem;
+                border-radius: 24px;
+            }
+
+            .hero-card h1 {
+                font-size: 2rem;
+            }
+
+            .card {
+                padding: 1.6rem 1.4rem;
+            }
+
+            .card h2 {
+                font-size: 1.35rem;
+                padding-left: 0.8rem;
+            }
+
+            .feature-list li {
+                gap: 0.7rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-card h1 {
+                font-size: 1.7rem;
+            }
+
+            .hero-card .tagline {
+                font-size: 1rem;
+            }
+
+            .scene-dots span {
+                font-size: 0.8rem;
+                padding: 0.1rem 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- hero 开场短句 -->
+    <div class="hero-card">
+        <div class="hero-short">一场运动，一段故事</div>
+        <h1>与 <span>MK体育</span> 同行</h1>
+        <p class="tagline">不追求喧哗，只在乎每一次脚步落地的真实回响。</p>
+        <a href="https://portalapp-mksports.com" class="mild-link">MK体育</a>
+    </div>
+
+    <!-- 承接段落：从主题背后展开 -->
+    <div class="card intro-text">
+        <h2>从运动本身说起</h2>
+        <p>人们常说，体育不只是胜负的较量，更是一种生活的语言。当我们把目光投向<strong>MK体育</strong>，首先看到的不是一组数据或平台功能，而是那些由汗水、节奏与安静专注构成的瞬间。无论是清晨独自跑过的街巷，还是傍晚球场上传来的模糊呼喊，运动总在不知不觉中梳理着我们的思绪。</p>
+        <p><a href="https://portalapp-mksports.com">MK体育</a> 所关注的，正是这样一种温和而持续的陪伴——它不试图用口号激励谁，而是提供一个足够安静的角落，让你与自己的运动习惯对话。在这里，记录与分享，都基于真实的体验，而非夸张的承诺。</p>
+    </div>
+
+    <!-- 特点列表 (卡片) -->
+    <div class="card">
+        <h2>安静而实用的特点</h2>
+        <ul class="feature-list">
+            <li><span class="feature-marker">◈</span><div><strong>轻量记录</strong> — 不必每次都打开手机，简单的随手标记就能留下运动轨迹，不打扰日常节奏。</div></li>
+            <li><span class="feature-marker">◈</span><div><strong>氛围角落</strong> — 没有排行榜压力，只有来自相似爱好者的温和互动，更像一个安静的运动笔记本。</div></li>
+            <li><span class="feature-marker">◈</span><div><strong>个人节奏</strong> — 支持自定义目标与周期，允许你按照自己的步调调整，不必追赶任何人。</div></li>
+            <li><span class="feature-marker">◈</span><div><strong>清晰概览</strong> — 用最简单的时间线展示你的运动历程，过去一周、一个月的变化一目了然。</div></li>
+        </ul>
+    </div>
+
+    <!-- 场景 + 提示 混合卡片 -->
+    <div class="card">
+        <h2>运动发生的日常</h2>
+        <p>它可能出现在通勤路上提前两站下车步行，也可能出现在周末午后临时起意的骑行。又或者只是睡前几分钟的舒展——这些不被注意的碎片，恰恰构成了多数人的运动底色。</p>
+        <div class="scene-dots">
+            <span>晨间散步</span>
+            <span>午休拉伸</span>
+            <span>傍晚慢跑</span>
+            <span>晚间瑜伽</span>
+            <span>周末远足</span>
+        </div>
+        <p style="margin-top: 1rem; font-size: 0.95rem; color: #596f83;">不必把运动看作一项任务。当你觉得需要喘口气的时候，它自然就在那里。在 <a href="https://portalapp-mksports.com">MK体育</a> 中，这些瞬间会被悄悄收集，却不喧宾夺主。</p>
+    </div>
+
+    <!-- FAQ 摘要 (温和风格) -->
+    <div class="card">
+        <h2>一些常见问题</h2>
+        <div class="faq-item">
+            <div class="faq-q">需要一开始就设定详细计划吗？</div>
+            <div class="faq-a">不需要。你完全可以先试着记录一两次，再慢慢摸索适合自己的频率。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">我的数据会怎样被使用？</div>
+            <div class="faq-a">运动记录仅用于个人回顾，平台不会以任何形式分享或分析你的个人数据。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">如果不喜欢社交互动呢？</div>
+            <div class="faq-a">你可以完全保持沉默，只把自己的运动页面当作一本私人日志。</div>
+        </div>
+        <div style="margin-top: 1rem; font-size: 0.9rem; color: #6a7f93; border-top: 1px solid #edf0f5; padding-top: 1rem;">
+            更多细节，你可以在 <a href="https://portalapp-mksports.com">MK体育</a> 中找到对应的说明，那里没有复杂的条款，只有朴素的介绍。
+        </div>
+    </div>
+
+    <!-- 温和结尾 -->
+    <div class="card" style="text-align: center; padding: 1.8rem 2rem;">
+        <p style="font-size: 1.05rem; color: #3b4f62; max-width: 500px; margin: 0 auto;">运动是一种自我相处的方式。无论你走多远，<a href="https://portalapp-mksports.com">MK体育</a> 始终如一，不催促，不打扰。</p>
+        <div style="margin-top: 1rem; color: #8b9dad; font-size: 0.9rem;">—— 继续你原本的节奏就好。</div>
+    </div>
+
+    <div class="footer-note">
+        <span>MK体育 · 以运动为语言</span><br>
+        <span style="font-size: 0.8rem;">内容仅作介绍，不构成任何承诺 · <a href="https://portalapp-mksports.com">MK体育</a></span>
+    </div>
+</div>
+</body>
+</html>
