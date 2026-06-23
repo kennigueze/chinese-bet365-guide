@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MK体育 · 温和入口</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background-color: #f7f6f3;
+            color: #1f1e1c;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .hero {
+            background: #0f0e0c;
+            padding: 4.5rem 1.5rem 5rem;
+            text-align: center;
+            color: #eae7e2;
+            border-bottom: 1px solid #2a2825;
+        }
+
+        .hero .prelude {
+            font-size: 0.95rem;
+            letter-spacing: 0.4px;
+            color: #b7aea0;
+            margin-bottom: 1.2rem;
+            font-weight: 400;
+        }
+
+        .hero h1 {
+            font-size: 2.4rem;
+            font-weight: 450;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+            margin-bottom: 0.8rem;
+        }
+
+        .hero .sub {
+            font-size: 1.1rem;
+            color: #cdc4b6;
+            max-width: 560px;
+            margin: 0 auto;
+            font-weight: 350;
+            border-top: 1px solid #2e2b27;
+            padding-top: 1.2rem;
+            display: inline-block;
+        }
+
+        .container {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 2.8rem 1.5rem 3.6rem;
+        }
+
+        .intro-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2.4rem 2rem 2.6rem;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.03);
+            margin-bottom: 2.8rem;
+        }
+
+        .intro-card p {
+            margin-bottom: 1.4rem;
+            font-size: 1.05rem;
+        }
+
+        .intro-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .intro-card a {
+            color: #2f5b4a;
+            text-decoration: none;
+            border-bottom: 1px solid #b4cdbf;
+            font-weight: 430;
+            transition: border-color 0.2s, color 0.2s;
+        }
+
+        .intro-card a:hover {
+            color: #0f3327;
+            border-bottom-color: #0f3327;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.8rem;
+            margin: 2.2rem 0 1.8rem;
+        }
+
+        .feature-item {
+            background: #faf9f6;
+            padding: 1.5rem 1.6rem;
+            border-radius: 18px;
+            border-left: 4px solid #b7aea0;
+        }
+
+        .feature-item h3 {
+            font-size: 1.15rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: #1f1e1c;
+        }
+
+        .feature-item p {
+            font-size: 0.95rem;
+            margin-bottom: 0;
+            color: #3b3a37;
+        }
+
+        .section-tag {
+            font-size: 0.85rem;
+            color: #7b756b;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .scene-block {
+            margin-top: 2.6rem;
+            background: white;
+            border-radius: 20px;
+            padding: 2rem 2rem 2.4rem;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.03);
+        }
+
+        .scene-block h2 {
+            font-size: 1.4rem;
+            font-weight: 460;
+            margin-bottom: 0.9rem;
+            color: #1f1e1c;
+        }
+
+        .scene-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .scene-list li {
+            padding: 0.9rem 0;
+            border-bottom: 1px solid #efede8;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+        }
+
+        .scene-list li:last-child {
+            border-bottom: none;
+        }
+
+        .scene-list li::before {
+            content: "·";
+            color: #7b756b;
+            font-weight: bold;
+            font-size: 1.6rem;
+            line-height: 1;
+        }
+
+        .faq-condensed {
+            margin-top: 2.8rem;
+            background: #f2f0eb;
+            padding: 1.8rem 2rem;
+            border-radius: 20px;
+        }
+
+        .faq-condensed h3 {
+            font-size: 1.1rem;
+            font-weight: 460;
+            margin-bottom: 0.7rem;
+        }
+
+        .faq-condensed p {
+            font-size: 0.95rem;
+            color: #3b3a37;
+            margin-bottom: 0.5rem;
+        }
+
+        .faq-condensed .small-note {
+            font-size: 0.9rem;
+            color: #5f5a52;
+        }
+
+        .closing {
+            margin-top: 2.8rem;
+            padding: 1.2rem 0;
+            text-align: center;
+            color: #4c4841;
+            border-top: 1px solid #ddd8d0;
+            font-size: 0.95rem;
+        }
+
+        .closing a {
+            color: #2f5b4a;
+            text-decoration: none;
+            border-bottom: 1px solid #b4cdbf;
+            font-weight: 440;
+            transition: border-color 0.2s;
+        }
+
+        .closing a:hover {
+            border-bottom-color: #0f3327;
+        }
+
+        @media (max-width: 640px) {
+            .hero {
+                padding: 3.2rem 1.2rem 3.6rem;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .container {
+                padding: 1.8rem 1rem 2.6rem;
+            }
+
+            .intro-card {
+                padding: 1.8rem 1.2rem 2rem;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .scene-block {
+                padding: 1.6rem 1.2rem 1.8rem;
+            }
+
+            .faq-condensed {
+                padding: 1.4rem 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+        <div class="prelude">—— 一段有温度的叙述 ——</div>
+        <h1>从“去哪”到“到了”</h1>
+        <span class="sub">一份安静的指引，通向稳定的角落</span>
+    </section>
+
+    <div class="container">
+
+        <div class="intro-card">
+            <span class="section-tag">☕ 序 · 入口</span>
+            <p>在网络深处，我们经常需要一处熟悉的落点——不必喧哗，但求可靠。在诸多选择中，<a href="https://portal-wap-mksports.com">MK体育</a>一直在那里，像一本翻旧了的书，安放在固定的位置。这一页的初衷很简单：把它安放的位置写清楚，顺便也写一写它多年来的模样。</p>
+            <p>很多人第一次到来，是因为朋友的随口一提。第二次再来，则是因为熟悉的界面和没有突然消失的安心感。一个稳定的入口，有时候比任何华丽的宣传都重要。</p>
+        </div>
+
+        <div class="feature-grid">
+            <div class="feature-item">
+                <h3>没有杂音</h3>
+                <p>页面保持清爽，没有冗余的弹窗和干扰。重点信息一目了然，不被无关内容推着走。</p>
+            </div>
+            <div class="feature-item">
+                <h3>路径清晰</h3>
+                <p>你不需要反复寻找跳转按钮，每一次访问都指向同一个熟悉的起点。</p>
+            </div>
+            <div class="feature-item">
+                <h3>温和节奏</h3>
+                <p>从首页到内容页，过渡自然，没有狂刷存在感的动态元素，给你留出阅读的喘息时间。</p>
+            </div>
+            <div class="feature-item">
+                <h3>长情陪伴</h3>
+                <p>它不标榜“最新”“最快”，而是默默保持在线，成为许多人习惯性点开的那个标签页。</p>
+            </div>
+        </div>
+
+        <div class="scene-block">
+            <h2>常见的使用场景</h2>
+            <ul class="scene-list">
+                <li>午后想放松几分钟，直接打开熟悉的页面，不需要重新适应布局。</li>
+                <li>信息过载时回到这里，因为它的界面风格始终如一，不会突然改版。</li>
+                <li>推荐给新朋友时，只需要发一个链接，对方就能看到和你一样的界面。</li>
+                <li>手机端和桌面端都保持基本的整洁，阅读时不用频繁缩放。</li>
+            </ul>
+        </div>
+
+        <div class="faq-condensed">
+            <h3>❓ 一些简短说明</h3>
+            <p><strong>访问的时候需要怎么做？</strong> —— 不需要注册，不需要下载，直接打开即可浏览。</p>
+            <p><strong>页面加载速度如何？</strong> —— 在常规网络环境下响应正常，信息结构轻量。</p>
+            <p class="small-note">如果有任何疑问，页面本身已经给出了足够清晰的指向，按提示操作即可。</p>
+        </div>
+
+        <div class="closing">
+            <p>归根结底，一个入口的意义不是“推着你走”，而是“等你回来”。<br>
+            如果你还没有来过，不妨把这个地址收好：<a href="https://portal-wap-mksports.com">MK体育</a> —— 它一直在，不急不躁。</p>
+        </div>
+
+    </div>
+
+</body>
+</html>
